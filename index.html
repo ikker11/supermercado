@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Súper Barrio</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Súper Barrio">
+<meta name="theme-color" content="#1f6f5c">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Barlow+Condensed:wght@600;800&family=Nunito+Sans:wght@400;700;900&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="hud" hidden>
+  <div class="topbar">
+    <div class="money" id="money">0,00 €</div>
+    <div class="clock"><span id="day">Día 1</span><b id="time">08:00</b><span id="status" class="closed">CERRADO</span></div>
+    <button class="menuBtn" id="menuBtn" aria-label="Menú">☰</button>
+  </div>
+  <div class="lvl"><span id="lvlTxt">Nivel 1</span><div class="xp"><i id="xpBar"></i></div></div>
+  <div class="notes" id="notes"></div>
+  <div class="cross" id="cross"></div>
+  <div class="hint" id="hint"></div>
+  <div class="carry" id="carry" hidden></div>
+  <div id="stick"><div id="knob"></div></div>
+  <div class="actions">
+    <button id="btnDrop" class="act sec">Soltar</button>
+    <button id="btnUse" class="act">Usar</button>
+  </div>
+</div>
+
+<div id="start" class="screen">
+  <div class="startCard">
+    <div class="logo">Súper<br>Barrio</div>
+    <p>Abre un pequeño local de barrio, reponlo tú mismo, cobra en la caja y conviértelo en un supermercado.</p>
+    <button class="big" id="playBtn">Jugar</button>
+    <p class="small" id="ctrlHelp">Móvil: joystick a la izquierda para andar, arrastra a la derecha para mirar, botón «Usar» para interactuar.<br>Ordenador: WASD, ratón, clic o E para usar, Q para soltar.</p>
+  </div>
+</div>
+
+<div id="panel" class="screen" hidden>
+  <div class="sheet">
+    <div class="sheetHead"><h2 id="panelTitle">Ordenador</h2><button class="x" id="panelClose" aria-label="Cerrar">✕</button></div>
+    <div class="tabs" id="tabs"></div>
+    <div class="sheetBody" id="panelBody"></div>
+    <div class="sheetFoot" id="panelFoot"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script type="module" src="game.js"></script>
+</body>
+</html>
